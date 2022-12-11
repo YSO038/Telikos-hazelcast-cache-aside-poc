@@ -1,0 +1,21 @@
+<hazelcast xmlns="http://www.hazelcast.com/schema/config"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.hazelcast.com/schema/config
+                               https://www.hazelcast.com/schema/config/hazelcast-config-4.2.xsd">
+    <instance-name>hazelcastInstance</instance-name>
+    <map name="persons">
+        <in-memory-format>BINARY</in-memory-format>
+        <backup-count>0</backup-count>
+        <async-backup-count>1</async-backup-count>
+        <time-to-live-seconds>30</time-to-live-seconds>
+        <max-idle-seconds>0</max-idle-seconds>
+        <eviction eviction-policy="LRU"/>
+        <!--<eviction-policy>LRU</eviction-policy>
+        <max-size policy="PER_NODE">1000000</max-size>
+        <eviction-percentage>25</eviction-percentage>-->
+        <!--<merge-policy>com.hazelcast.map.merge.PassThroughMergePolicy</merge-policy>-->
+
+    </map>
+
+    <management-center />
+</hazelcast>
